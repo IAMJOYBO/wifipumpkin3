@@ -1,17 +1,24 @@
 version: '3.2'
 services:
   wifipumpkin3:
-        build:
-                context: .
-        privileged: true
-        network_mode: "host"
-        volumes:
-                - type: bind
-                  source: ./scripts
-                  target: /root/.config/wifipumpkin3/scripts
-                - type: bind
-                  source: ./logs
-                  target: /root/.config/wifipumpkin3/logs
-                - type: bind
-                  source: ./config
-                  target: /root/.config/wifipumpkin3/config
+    image: registry.cn-hangzhou.aliyuncs.com/joybo/wifipumpkin3:v2025.04.16-action
+    privileged: true
+    network_mode: "host"
+    container_name: wifipumpkin3
+    hostname: wifipumpkin3
+    volumes:
+      - type: bind
+        source: ./wifipumpkin3/plugins/captiveflask
+        target: /root/.config/wifipumpkin3/wifipumpkin3/plugins/captiveflask
+      - type: bind
+        source: ./wifipumpkin3/plugins/captiveflask
+        target: /root/.config/wifipumpkin3/wifipumpkin3/plugins/captiveflask
+      - type: bind
+        source: ./scripts
+        target: /root/.config/wifipumpkin3/scripts
+      - type: bind
+        source: ./logs
+        target: /root/.config/wifipumpkin3/logs
+      - type: bind
+        source: ./config
+        target: /root/.config/wifipumpkin3/config
