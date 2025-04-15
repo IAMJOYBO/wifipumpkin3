@@ -31,7 +31,7 @@ COPY config/hostapd/hostapd.conf /etc/hostapd/hostapd.conf
 #RUN pip3 --version
 #RUN update-alternatives --install /usr/bin/python3 python3 1
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install -U pyqt5
+RUN python3 -m pip install pyqt5==5.14
 RUN python3 -m pip install .
 #CMD /usr/local/bin/wifipumpkin3 -m docker
 WORKDIR /root/.config/wifipumpkin3
