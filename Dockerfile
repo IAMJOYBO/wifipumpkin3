@@ -2,6 +2,15 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN mkdir -p /app
+WORKDIR /app
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-$(uname -m).sh && bash Miniconda3-latest-Linux-$(uname -m).sh -b -p /app/miniconda
+RUN /app/miniconda/bin/conda init
+ENV PATH=/app/miniconda/bin:$PATH
+RUN echo yes | conda create --name ktransformers python=3.8
+SHELL ["conda", "run", "-n", "ktransformers", "/bin/bash", "-c"]
+RUN conda install -c conda-forge python3.8 python3.8-dev python3-dev
+
 RUN apt-get update \
     && apt-get -y install \
         hostapd \
@@ -9,9 +18,6 @@ RUN apt-get update \
 	    iw \
         wireless-tools \
         ifupdown \
-        python3 \
-        python3-pip \
-        python3-dev \
         iptables \
         net-tools \
         rfkill \
