@@ -11,4 +11,4 @@ services:
       - ./logs:/root/.config/wifipumpkin3/logs
       - ./config:/root/.config/wifipumpkin3/config
       - ./:/usr/src/app
-      - ./start.sh:./start.sh
+      - ./start.sh:/root/.config/wifipumpkin3/start.sh
