@@ -37,6 +37,7 @@ jobs:
 
     - name: 构建和上传Docker镜像
       run: |
+        docker buildx create --name multi-platform --use --platform linux/amd64,linux/arm64 --driver docker-container
         docker buildx build --platform linux/amd64,linux/arm64 --push -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
     - name: Docker Pull 命令
       run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action"
