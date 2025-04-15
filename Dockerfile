@@ -22,7 +22,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 COPY config/hostapd/hostapd.conf /etc/hostapd/hostapd.conf
 #RUN pip3 --version
-RUN update-alternatives --install /usr/bin/python3 python3 1
+#RUN update-alternatives --install /usr/bin/python3 python3 1
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install pyqt5==5.14
 RUN python3 -m pip install .
