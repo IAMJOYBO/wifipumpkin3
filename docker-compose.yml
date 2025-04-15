@@ -11,9 +11,6 @@ services:
         source: ./wifipumpkin3/plugins/captiveflask
         target: /root/.config/wifipumpkin3/wifipumpkin3/plugins/captiveflask
       - type: bind
-        source: ./wifipumpkin3/plugins/captiveflask
-        target: /root/.config/wifipumpkin3/wifipumpkin3/plugins/captiveflask
-      - type: bind
         source: ./scripts
         target: /root/.config/wifipumpkin3/scripts
       - type: bind
