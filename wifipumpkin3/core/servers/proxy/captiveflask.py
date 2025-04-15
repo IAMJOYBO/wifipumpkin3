@@ -92,7 +92,7 @@ class CaptivePortal(ProxyMode):
                 iptables=self.getIptablesPath, iface=IFACE
             )
         )
-        
+
         print(display_messages("redirecting HTTP traffic to captive portal", info=True))
         self.add_default_rules(
             "{iptables} -t nat -A PREROUTING -i {iface} -p tcp --dport 80 -j DNAT --to-destination {ip}:{port}".format(
