@@ -20,8 +20,8 @@ WORKDIR /app
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-$(uname -m).sh && bash Miniconda3-latest-Linux-$(uname -m).sh -b -p /app/miniconda
 RUN /app/miniconda/bin/conda init
 ENV PATH=/app/miniconda/bin:$PATH
-RUN echo yes | conda create --name ktransformers python=3.8
-SHELL ["conda", "run", "-n", "ktransformers", "/bin/bash", "-c"]
+RUN echo yes | conda create --name wifi python=3.8
+SHELL ["conda", "run", "-n", "wifi", "/bin/bash", "-c"]
 # RUN conda install -c conda-forge python=3.8  pydev 
 
 # copy all files to app folder
