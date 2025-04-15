@@ -9,9 +9,9 @@ RUN apt-get update \
 	    iw \
         wireless-tools \
         ifupdown \
-        python3.9 \
+        python3.10 \
         python3-pip \
-        python3.9-dev \
+        python3.10-dev \
         iptables \
         net-tools \
         rfkill \
@@ -22,10 +22,10 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 COPY config/hostapd/hostapd.conf /etc/hostapd/hostapd.conf
 #RUN pip3 --version
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
-RUN python3.9 -m pip install --upgrade pip
-RUN python3.9 -m pip install pyqt5==5.14
-RUN python3.9 -m pip install .
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+RUN python3.10 -m pip install --upgrade pip
+RUN python3.10 -m pip install pyqt5==5.14
+RUN python3.10 -m pip install .
 #CMD /usr/local/bin/wifipumpkin3 -m docker
 WORKDIR /root/.config/wifipumpkin3
 CMD /usr/local/bin/wifipumpkin3
