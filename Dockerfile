@@ -35,4 +35,5 @@ RUN python3 -m pip install pyqt5==5.14
 RUN python3 -m pip install .
 #CMD /usr/local/bin/wifipumpkin3 -m docker
 WORKDIR /root/.config/wifipumpkin3
-CMD /usr/local/bin/wifipumpkin3
+# CMD /usr/local/bin/wifipumpkin3
+ENTRYPOINT ["tail", "-f", "/dev/null"]
