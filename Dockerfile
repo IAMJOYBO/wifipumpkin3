@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
-    && apt-get -y install wget  \
+    && apt-get -y install wget libglib2.0-0  \
         hostapd \
 	    nano \
 	    iw \
