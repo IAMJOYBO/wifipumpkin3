@@ -44,7 +44,7 @@ jobs:
         # docker buildx create --name multi-platform --use --platform linux/amd64,linux/arm64 --driver docker-container
         # docker buildx build --platform linux/arm64 --push -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
 
-        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
+        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action -f Dockerfile-aarch64 .
         docker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action
     - name: Docker Pull 命令
       run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action"
