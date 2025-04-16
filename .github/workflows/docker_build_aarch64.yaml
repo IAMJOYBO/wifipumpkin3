@@ -20,7 +20,11 @@ env:
 jobs:
   Docker-Build-Release:
     if: ${{ github.ref == 'refs/heads/main' }}  # 检测main分支是否有更新
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [ubuntu-24.04-arm]
+        base_image: [ubuntu22.04]
+    runs-on: ${{ matrix.arch }}
     steps:
 
     - name: 获取当前日期
@@ -37,10 +41,10 @@ jobs:
 
     - name: 构建和上传Docker镜像
       run: |
-        docker buildx create --name multi-platform --use --platform linux/amd64,linux/arm64 --driver docker-container
-        docker buildx build --platform linux/arm64 --push -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
+        # docker buildx create --name multi-platform --use --platform linux/amd64,linux/arm64 --driver docker-container
+        # docker buildx build --platform linux/arm64 --push -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
 
-        # docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
-        # ocker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action
+        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
+        docker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action
     - name: Docker Pull 命令
       run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action"
