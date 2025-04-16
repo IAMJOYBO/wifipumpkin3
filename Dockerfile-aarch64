@@ -32,7 +32,7 @@ RUN python3 -m pip install --upgrade pip
 RUN apt update && apt install -y qt5-default cmake gcc g++ && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN python3 -m pip install "sip>=5.0.1,<6"
 RUN wget https://pypi.tuna.tsinghua.edu.cn/packages/7c/5b/e760ec4f868cb77cee45b4554bf15d3fe6972176e89c4e3faac941213694/PyQt5-5.14.0.tar.gz#sha256=0145a6b7de15756366decb736c349a0cb510d706c83fda5b8cd9e0557bc1da72 && tar xf PyQt5-5.14.0.tar.gz && rm -rf PyQt5-5.14.0.tar.gz
-RUN cd PyQt5-5.14.0 && python3 configure.py --yes && make -j4 && make install 
+RUN cd PyQt5-5.14.0 && echo yes | python3 configure.py && make -j4 && make install 
 RUN cd /usr/lib/python3/dist-packages/ && tar -jcvf pyqt5.tar.bz2 ./PyQt5 && mv pyqt5.tar.bz2 /app/miniconda/envs/wifi/lib/python3.8/site-packages/ && cd /app/miniconda/envs/wifi/lib/python3.8/site-packages/ && tar -jxvf pyqt5.tar.bz2 && rm -rf pyqt5.tar.bz2
 
 RUN python3 -m pip install . && pip cache purge
