@@ -22,7 +22,7 @@ RUN /app/miniconda/bin/conda init
 ENV PATH=/app/miniconda/bin:$PATH
 RUN echo yes | conda create --name wifi python=3.8 cryptography
 SHELL ["conda", "run", "-n", "wifi", "/bin/bash", "-c"]
-RUN conda config --set auto_default_base false
+RUN conda config --set auto_activate_base false
 # copy all files to app folder
 COPY . /usr/src/app
 WORKDIR /usr/src/app
