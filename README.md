@@ -1,6 +1,6 @@
 # 基于 aarch64、x86_64 构建的 wifipumpkin3 Docker 镜像
 ## Docker镜像
-### registry.cn-hangzhou.aliyuncs.com/joybo/ktransformers
+### registry.cn-hangzhou.aliyuncs.com/joybo/wifipumpkin3
 |序号|Tag|构建时间|Python版本|Conda环境名称|New|架构|
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 |01|v2025.04.16-action|2025.4.16|3.8|wifi|[最新镜像](https://github.com/IAMJOYBO/wifipumpkin3/actions/workflows/docker_build.yaml)|aarch64|
