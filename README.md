@@ -3,11 +3,11 @@
 ### registry.cn-hangzhou.aliyuncs.com/joybo/wifipumpkin3
 |序号|Tag|构建时间|Python版本|Conda环境名称|New|架构|
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-|01|v2025.04.16-action|2025.4.16|3.8|wifi|[最新镜像](https://github.com/IAMJOYBO/wifipumpkin3/actions/workflows/docker_build.yaml)|amd64|
-|02|v2025.04.16-action-arm|2025.4.16|3.8|wifi|[最新镜像](https://github.com/wifipumpkin3/actions/workflows/docker_build_aarch64.yaml)|aarch64|
+|01|v2025.04.16-action|2025.4.16|3.8|wifi|[最新镜像](../../actions/workflows/docker_build.yaml)|amd64|
+|02|v2025.04.16-action-arm|2025.4.16|3.8|wifi|[最新镜像](../../actions/workflows/docker_build_aarch64.yaml)|aarch64|
 
-![wifipumkin3-arm](https://github.com/IAMJOYBO/wifipumpkin3/blob/main/wifipumpkin3-arm.jpg)
-![wifipumkin3-arm](https://github.com/IAMJOYBO/wifipumpkin3/blob/main/wifipumpkin3-arm-test.jpg)
+![wifipumkin3-arm](/wifipumpkin3-arm.jpg)
+![wifipumkin3-arm](/wifipumpkin3-arm-test.jpg)
 
 # Wifipumpkin3
 <a href="https://wifipumpkin3.github.io"><img alt="Wp3" height="96" src="https://github.com/mh4x0f/wifipumpkin3/blob/main/docs/logo.png" /></a>
