@@ -41,10 +41,11 @@ jobs:
 
     - name: 构建和上传Docker镜像
       run: |
-        # docker buildx create --name multi-platform --use --platform linux/amd64,linux/arm64 --driver docker-container
-        # docker buildx build --platform linux/arm64 --push -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
-
-        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm -f Dockerfile-aarch64 .
-        docker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm
+        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm64 -f Dockerfile-aarch64 .
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm64
+        docker tag  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm64 ${{ env.server }}/${{ env.own }}/${{ env.repo }}:arm64
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}:arm64
     - name: Docker Pull 命令
-      run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm"
+      run: | 
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-arm64"
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:arm64"
